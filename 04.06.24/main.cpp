@@ -7,20 +7,17 @@
 class Worker 
 {
 private:
-    std::string name;
-    std::string surname;
+    std::string name_surname = " ";
     int experience;
     double hourlySalary;
     int hoursWorked;
 
 
 public:
-    void EnterInfo() 
+    void EnterInfo()
     {
-        std::cout << "Введите имя: ";
-        std::cin >> name;
-        std::cout << "\nВведите фамилию: ";
-        std::cin >> surname;
+        std::cout << "Введите имя и фамилию: ";
+        std::getline(std::cin, name_surname);
         std::cout << "\nВведите стаж: ";
         std::cin >> experience;
         std::cout << "\nВведите Часовую зарплату: ";
@@ -61,8 +58,7 @@ public:
 
     void displayInfo()
     {
-        std::cout << "\n\nИмя: " << name << "\n";
-        std::cout << "Фамилия: " << surname << "\n";
+        std::cout << "\n\nИмя и фамилия: " << name_surname << "\n";
         std::cout << "Стаж: " << experience << " Лет" << "\n";
         std::cout << "Часовая зп: " << hourlySalary << "\n";
         std::cout << "Кол-во отработанных часов: " << hoursWorked << "\n";
